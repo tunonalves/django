@@ -1,0 +1,11 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block title %}Pagina Inicial{% endblock %}
+{% block content %}
+    <h1>Cotización del dólar</h1>
+    <ul>
+        {% for key,value in list.items %}
+            <li>{{ key }} : {{ value | cut:"'" }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

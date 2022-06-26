@@ -1,0 +1,25 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block title %}Pagina Inicial{% endblock %}
+{% block content %}
+        <img src='{% static "myapp/dool.png" %}' width="100" height="100"/>
+        <h1>{{ nombre }}</h1>
+        <h3>{{ descripcion }}</h3>
+        <hr>
+        <p>{{ portfolio.proyecto1 }}</p>
+        <p>{{ portfolio.proyecto2 }}</p>
+        <hr>
+        <h2>Cantidad de clientes : {{clientes|first}}</h2>
+        {% for cliente in clientes %}
+            <p>{{ cliente|cut:"_"}}</p>
+        {% endfor %}
+        <hr>
+        {{ sinvalor| default:"N/A"}}
+        {% if revenue > 50000 %}
+            <p>Ha sido un buen año!</p>
+        {% else %}
+            <p>NO Ha sido un buen año!</p>
+        {% endif %}
+
+        {% now "D M Y H T" %}
+{% endblock %}

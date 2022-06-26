@@ -1,0 +1,24 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block title %}Pagina de Cursos{% endblock %}
+{% block content %}
+        </p>
+
+        <table class="table table-hover">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Curso</th>
+                <th scope="col">Inscriptos</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for nombre, inscriptos in cursos %}
+                <tr>
+                    <td>{{ nombre }}</td>
+                    <td>{{inscriptos}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+
+{% endblock %}
